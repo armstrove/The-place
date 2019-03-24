@@ -1,0 +1,18 @@
+{% extends "base_generic2.html" %}
+
+{% block content %}
+  <h1>Master English</h1>
+  <p>Welcome to EnForFun, a website developed by <em>Armstrove</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>Count of our Tests</p>
+  <ul>
+    <li><strong>Language Tests:</strong> {{ num_lang_tests }}</li>
+    <li><strong>Visit numbers :</strong> {{ num_visits }}</li>
+  </ul>
+{% endblock %}
+
+
+{% block title %}
+<title>EnForFun</title>
+{% endblock %}
+
