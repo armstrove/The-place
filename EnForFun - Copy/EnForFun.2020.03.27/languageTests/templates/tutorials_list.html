@@ -1,0 +1,56 @@
+{% extends "base_generic2.html" %}
+
+{% block content %}
+
+
+  <div class="tests-header"><h1>Tutorials</h1><div>
+  <div>
+  
+  Select Level 
+  
+  </div>   
+  
+  <select class="selectstrove" id="select_level">
+      <option value="All">All</option>
+      {% for level in levels %}
+         <option value="{{ level.0 }}" {% if request.GET.level == level.0 %} selected {% endif %}>{{ level.1 }}</option>
+      {% endfor%}                  
+  </select>   
+
+  {% if tutorials_list %}  
+
+  
+  
+  <div class="container">
+    {% for tutorial in tutorials_list %}
+       
+      {% if forloop.first %}<div class="row">{% endif %}  
+          <div class="col col-xs-4 language-tests margin">
+              <a href="{{ tutorial.get_absolute_url }}">         
+                  <div class="button-hover">
+                      <div class="test-title">{{ tutorial.tutorial_title}}</div>
+                      <div class="test-level">({{ tutorial.return_level_str }})</div>
+                  </div>
+              </a>
+          </div>
+      {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}    
+      {% if forloop.last %}</div>{% endif %}    
+    {% endfor %}
+  {% else %}
+      <p>There are no Tutorials.</p>
+  {% endif %}  
+    
+  </div id="end">
+
+    {% block javascript %}
+      <script>
+        $("#select_level").change(function () {
+          var level= $(this).val()
+          console.log( $(this).val() );
+          window.open('{% url "tutorials" %}?level=' + level,'_self',false)
+        });
+      </script>
+    {% endblock %}
+
+     
+{% endblock %}

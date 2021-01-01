@@ -1,0 +1,36 @@
+{% extends "base_generic2.html" %}
+
+{% block content %}
+
+
+  <div class="tests-header"><h1>{{ topic.title }}</h1><div>
+
+  
+
+
+  {% if topic %}  
+  
+  <div class="container">
+    {% for language_test in language_tests %}
+       
+      {% if forloop.first %}<div class="row">{% endif %}  
+          <div class="col col-xs-2 language-tests margin">
+              <a href="{{ language_test.get_absolute_url }}">         
+                  <div class="button-hover">
+                      <div class="test-title">{{ language_test.number}}</div>
+                  </div>
+              </a>
+          </div>
+      {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}    
+      {% if forloop.last %}</div>{% endif %}    
+    {% endfor %}
+  {% else %}
+      <p>There are no tests.</p>
+  {% endif %}  
+    
+  </div id="end">
+
+
+
+     
+{% endblock %}

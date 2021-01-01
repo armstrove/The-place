@@ -1,0 +1,25 @@
+{% extends "base_generic2.html" %}
+{% load custom_tags %}
+
+
+{% block content %}
+  <h1 class="test-header">{{ tutorial.tutorial_title }}</h1>  
+
+    
+  
+    <div class="Explanation-wrapper">
+    {% if tutorial.tutorialcomponent_set.all %}
+        
+        {% for tutorial_comp in tutorial.tutorialcomponent_set.all %}
+          <div class="a">
+            {{ tutorial_comp.component_text }}
+          <p>
+          </div> 
+        {% endfor %}
+    </div">
+    {% else %}
+          <p>There is no excersise for this test</p>  
+    {% endif %}
+       
+
+{% endblock %}

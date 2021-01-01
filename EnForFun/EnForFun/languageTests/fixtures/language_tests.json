@@ -1,0 +1,180 @@
+[
+{
+    "model": "languageTests.explanation",
+    "pk": 1,
+    "fields": {
+        "answer": 857,
+        "language": 1,
+        "explain_text": "It is not mine you idiot.",
+        "wrong_answer": "mine"
+    }
+},
+{
+    "model": "languageTests.answer",
+    "pk": 853,
+    "fields": {
+        "excersise": "45df3db0-5da6-4246-848c-4c6dfdfc9dab",
+        "explanation_string": "\u201chorses\u201d here are mentioned as a group of animals not a  pecific group of horses.",
+        "answer_string": "countable",
+        "possible_answers": "countable/uncountable"
+    }
+},
+{
+    "model": "languageTests.answer",
+    "pk": 855,
+    "fields": {
+        "excersise": "db8d17ac-d511-4811-a517-c75bda28299b",
+        "explanation_string": "sad",
+        "answer_string": "some",
+        "possible_answers": "*"
+    }
+},
+{
+    "model": "languageTests.answer",
+    "pk": 856,
+    "fields": {
+        "excersise": "425b2752-f20e-4c90-957b-ce5493485416",
+        "explanation_string": "asd",
+        "answer_string": "some",
+        "possible_answers": "possible"
+    }
+},
+{
+    "model": "languageTests.answer",
+    "pk": 857,
+    "fields": {
+        "excersise": "b817c6eb-3aca-4afc-9fb5-f8dee3230b7c",
+        "explanation_string": "Here you should use my",
+        "answer_string": "my",
+        "possible_answers": "mine/my/is"
+    }
+},
+{
+    "model": "languageTests.answer",
+    "pk": 858,
+    "fields": {
+        "excersise": "513f7629-dc36-41f3-90c8-ba6ff4feeab8",
+        "explanation_string": "asd",
+        "answer_string": "some",
+        "possible_answers": "in/at/on/some"
+    }
+},
+{
+    "model": "languageTests.language",
+    "pk": 1,
+    "fields": {
+        "name": "English"
+    }
+},
+{
+    "model": "languageTests.excersise",
+    "pk": "425b2752-f20e-4c90-957b-ce5493485416",
+    "fields": {
+        "exercise_type": "s",
+        "text": "There are some cups on the kitchen table.",
+        "language_test": 125
+    }
+},
+{
+    "model": "languageTests.excersise",
+    "pk": "45df3db0-5da6-4246-848c-4c6dfdfc9dab",
+    "fields": {
+        "exercise_type": "cco",
+        "text": "Bag $$$",
+        "language_test": 125
+    }
+},
+{
+    "model": "languageTests.excersise",
+    "pk": "513f7629-dc36-41f3-90c8-ba6ff4feeab8",
+    "fields": {
+        "exercise_type": "cco",
+        "text": "There are $$$ cups on the kitchen table.",
+        "language_test": 125
+    }
+},
+{
+    "model": "languageTests.excersise",
+    "pk": "b817c6eb-3aca-4afc-9fb5-f8dee3230b7c",
+    "fields": {
+        "exercise_type": "w",
+        "text": "Hello $$$ dear friend.",
+        "language_test": 126
+    }
+},
+{
+    "model": "languageTests.excersise",
+    "pk": "db8d17ac-d511-4811-a517-c75bda28299b",
+    "fields": {
+        "exercise_type": "t",
+        "text": "There are $$$ cups on the kitchen table.",
+        "language_test": 125
+    }
+},
+{
+    "model": "languageTests.topic",
+    "pk": 96,
+    "fields": {
+        "level": "b",
+        "title": "sel"
+    }
+},
+{
+    "model": "languageTests.topic",
+    "pk": 97,
+    "fields": {
+        "level": "i",
+        "title": "Past Perfect"
+    }
+},
+{
+    "model": "languageTests.languagetest",
+    "pk": 125,
+    "fields": {
+        "task": "Construct a sentence",
+        "number": 1,
+        "topic": 96,
+        "language": 1
+    }
+},
+{
+    "model": "languageTests.languagetest",
+    "pk": 126,
+    "fields": {
+        "task": "Select correct words",
+        "number": 1,
+        "topic": 97,
+        "language": 1
+    }
+},
+{
+    "model": "languageTests.languagetest",
+    "pk": 154,
+    "fields": {
+        "task": "aaa",
+        "number": 2,
+        "topic": 96,
+        "language": 1
+    }
+},
+{
+    "model": "languageTests.languagetest",
+    "pk": 155,
+    "fields": {
+        "task": "asd",
+        "number": 123,
+        "topic": 96,
+        "language": 1
+    }
+},
+{
+    "model": "languageTests.languagetest",
+    "pk": 156,
+    "fields": {
+        "task": "112",
+        "number": 3,
+        "topic": 96,
+        "language": 1
+    }
+}
+]

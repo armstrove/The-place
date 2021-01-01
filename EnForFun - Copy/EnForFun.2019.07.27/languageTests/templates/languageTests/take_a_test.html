@@ -1,0 +1,41 @@
+{% extends "base_generic2.html" %}
+{% load custom_tags %}
+
+
+{% block content %}
+  <h1>Title: {{ language_test.title }}</h1>  
+   
+    
+
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    
+    {% if form.non_field_errors %}
+        <ul>
+          {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+    {% endif %}
+    
+  
+    <div class="form-group">
+    
+    {% if language_test.excersise_set.all %}
+        {% for excersise in language_test.excersise_set.all %}
+          <hr>
+          <p>{% add_choices_to_excersise excersise.text form form.get_tests_dict|get_item:excersise.id %}</p>
+          <p>{# excersise.text #}</p>
+          <br/> 
+          <!--p>{{ output2 }}</p--> 
+        {% endfor %}
+    {% else %}
+          <p>There is no excersise for this test</p>  
+    {% endif %}
+    
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock %}

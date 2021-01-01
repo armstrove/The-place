@@ -5,12 +5,15 @@ Spyder Editor
 This is a temporary script file.
 """
 
+import random
+import re
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+answer="Hellow my firend."
 
+words_of_answer=answer.split(" ")
+random.shuffle(words_of_answer)
 
-
-print(s)
-
+#for word in words_of_answer:
+#    print("{}".format(word))
+for i,word in enumerate(words_of_answer):
+    print("{}.{}".format(i,word))

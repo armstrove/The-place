@@ -1,0 +1,33 @@
+import sys
+import requests
+import re
+import praw
+
+reddit = praw.Reddit(
+    client_id="QH3vBoh3xH2zyg",
+    client_secret="nvvAUehI9ihf1fp6Q13HM56quDQ",
+    user_agent="Python automatic pacifier haghteluEnq v1.0 (by /u/armstrovr)",
+    username="armstrovr",
+    password="Lu!@34crative"
+)
+print(dir(reddit.auth.limits))
+print(reddit.auth.limits)
+#sys.exit()
+print(reddit.read_only)
+subreddit = reddit.subreddit("azerbaijan")
+for submission in subreddit.hot(limit=5):
+    print(submission.title)  # Output: the submission's title
+    #print(submission.score)  # Output: the submission's score
+    #print(submission.id)     # Output: the submission's ID
+    #print(submission.url)    # Output: the URL the submission points to
+                             # or the submission's URL if it's a self post
+    submission.comment_sort = "new"
+    top_level_comments = list(submission.comments)
+    all_comments = submission.comments.list()
+    for comment in all_comments:
+         print("downvoting:" + str(comment.body))
+         comment.downvote()
+         print("limits=" + str(reddit.auth.limits))
+         print("used  =" + str(reddit.auth.limits["used"]))
+
+print("finished")

@@ -1,0 +1,50 @@
+{% extends "base_generic2.html" %}
+{% load custom_tags %}
+
+
+{% block content %}
+  <h1 class="test-header">{{ language_test.task }}</h1>  
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    
+    {% if form.non_field_errors %}
+        <ul>
+          {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+    {% endif %}
+    
+  
+    <div class="form-group">
+    
+    {% if language_test.excersise_set.all %}
+        
+        {% for excersise in language_test.excersise_set.all %}
+          <div class="ex-wrapper{{forloop.counter}} ex-wrapper">
+          {% if excersise.exercise_type == "w" %}
+              <p>{% excersise_choose_the_word excersise.text form form.get_tests_dict|get_item:excersise.id %}</p>           
+          {% elif excersise.exercise_type == "s" %}
+              <p>{% excersise_construct_a_sentence excersise.text form form.get_tests_dict|get_item:excersise.id excersise.id%}</p>
+          {% elif excersise.exercise_type == "t" %}
+              <p>{% excersise_type_the_word excersise.text form form.get_tests_dict|get_item:excersise.id %}</p>
+          {% else %}
+              <p>I don't have an idea what excercise this is </p>        
+          {% endif %}
+          <p>
+          <!--p>{# excersise.text #}</p-->
+          <!--p>{{ output2 }}</p-->
+          </div> 
+        {% endfor %}
+        </div">
+    {% else %}
+          <p>There is no excersise for this test</p>  
+    {% endif %}
+    
+    <div class="wrapperbtn">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>   
+  </form>
+
+{% endblock %}

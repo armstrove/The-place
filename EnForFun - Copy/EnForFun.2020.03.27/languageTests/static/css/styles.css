@@ -1,0 +1,156 @@
+.e.test-level {
+    font-size:x-small;
+}
+
+.test-title {
+    font-size:x-large;  
+}
+
+.col {
+    padding:10px 10px;
+}
+
+.button-hover {
+    text-align:center;
+    border-style:inset;
+    border-width:thick;
+    padding:40px 40px;
+    border-radius:10px 10px 10px;
+    background-image:linear-gradient(to top, rgba(220,220,220,.8),rgba(180,180,180,1))
+}
+
+.button-hover:hover {
+    border-width:thin;
+    background-image:linear-gradient(to top, rgba(240,240,240,.8),rgba(220,220,220,1))
+}
+
+
+@keyframes example1 {
+    from {background-color: white;}
+    to {background-color:#c1c1c1;}
+}
+
+@keyframes example2 {
+    0%   {background-color:beige;}
+    50%  {background-color:azure;}
+    75%  {background-color:azure;}
+    100% {background-color:azure;}
+}
+
+@keyframes animate_up {
+    0%   {top:150px;opacity:0}
+    100% {top:  0px;opacity:1}
+}
+
+@keyframes come_to_light {
+    0%   {opacity:0}
+    100% {opacity:1}
+}
+.wrapperbtn, wrapper-explanation-message {
+    text-align:center;
+}
+
+.selectstrove  {
+    border:inherit;
+    border-radius:15px 40px 30px;
+    background: #c1c1c1;
+    -webkit-animation-name:example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration; 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 2s;
+}
+
+.form-group p { 
+    margin: 5% 2%;
+    text-align: center;
+}   
+
+.wrapper-status {
+    display:flex;
+}
+
+.drag-n-drop-answers-wrapper {
+    text-align: center;
+}
+
+
+.drag-n-drop-wrapper {
+    text-align: center;
+}
+
+.drag-n-drop-aswer-cell {
+    background-color:#aaaaaa;
+    text-align: center;
+    margin:auto;
+    display:inline-block;
+    border-radius:15px 15px 15px;
+    padding:20px;
+    text-align: center;
+}
+
+.dragNDropWord {
+    background-color:#337ab7;
+    text-align: center;
+    margin:auto;
+    display:inline-block;
+    border-radius:15px 15px 15px;
+    padding:20px;
+    text-align: center;
+}
+
+.dragNDropWord {
+    background-color:#337ab7;
+    text-align: center;
+    margin:auto;
+    display:inline-block;
+    border-radius:15px 15px 15px;
+    padding:20px;
+    text-align: center;
+}
+
+.status {
+    text-align: center;
+    margin:auto;
+    display:inline-block;
+    border-radius:15px 40px 30px;
+    padding:20px;
+    text-align: center;
+}
+
+.success-message {    
+    background-color:limegreen;
+    display:inline-block;
+    color:black;
+}
+
+.explanation-message {    
+    background-color:#f44336;
+    display:inline-block;
+    color:white;
+}
+    
+.form-group button, .form-group p , .status, .drag-n-drop-wrapper , .drag-n-drop-answers-wrapper {    
+    position:relative;  
+    -webkit-animation-name:animate_up;           /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration; 2s;              /* Safari 4.0 - 8.0 */
+    -webkit-animation-timing-function; ease;     /* Safari 4.0 - 8.0 */
+    animation-name: animate_up;
+    animation-duration: 1.5s;    
+    animation-timing-function: ease;
+}
+
+.tests-header {
+     ntext-align:center;
+}
+
+.test-header {
+    -webkit-animation-name:come_to_light;        /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration; 1.5s; /* Safari 4.0 - 8.0 */
+    animation-name: come_to_light;
+    animation-duration: 1.5s;
+    text-align:center;
+}
+
+
+
+

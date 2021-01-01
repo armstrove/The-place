@@ -1,0 +1,79 @@
+{% extends "base_generic2.html" %}
+{% load custom_tags %}
+
+
+{% block content %}
+  <h1>Title: {{ language_test.title }}</h1>  
+   
+    
+
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    
+    {% if form.non_field_errors %}
+        <ul>
+          {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+    {% endif %}
+    
+    
+    {% for hidden_field in form.hidden_fields %}
+        {% if hidden_field.errors %}
+          <ul>
+            {% for error in hidden_field.errors %}
+              <li>(Hidden field {{ hidden_field.name }}) {{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {{ hidden_field }}
+    {% endfor %}
+    
+    <table border=1>
+    <div class="form-group">
+    
+    {% if language_test.excersise_set.all %}
+        {% for excersise in language_test.excersise_set.all %}
+          <hr>
+          <p>{% add_choices_to_excersise excersise.text form form.get_tests_dict|get_item:excersise.id %}</p>
+          <p>{# excersise.text #}</p>
+          <br/> 
+          <!--p>{{ output2 }}</p--> 
+        {% endfor %}
+    {% else %}
+          <p>There is no excersise for this test</p>  
+    {% endif %}
+    
+    
+    
+    
+    {% comment %}
+    {% for field in form.visible_fields %}
+      <tr>
+        <th>{{ field.label_tag }}</th>
+        <td>
+          {% if field.errors %}
+            <ul>
+              {% for error in field.errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          {{ field }}
+          
+  
+          {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+          {% endif %}
+        </td>
+      </tr>  
+    </div>  
+    {% endfor %}
+    {% endcomment %}
+    </table>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock %}

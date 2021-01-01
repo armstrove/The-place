@@ -1,0 +1,19 @@
+{% extends "base_generic2.html" %}
+
+{% block content %}
+  <h1>Title: {{ languagetest.title }}</h1>
+   
+  <!--<p><strong>Genre:</strong> {% for genre in book.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  -->
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Exs</h4>
+    {% if languagetest.excersise_set.all %}
+        {% for excersise in languagetest.excersise_set.all %}
+          <hr>
+          <p>{{ excersise.text }}</p> 
+        {% endfor %}
+    {% else %}
+          <p>There is no excersise for this test</p>  
+    {% endif %}    
+  </div>
+{% endblock %}

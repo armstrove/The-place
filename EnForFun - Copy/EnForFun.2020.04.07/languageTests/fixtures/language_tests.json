@@ -1,0 +1,103 @@
+[
+{
+    "model": "languageTests.answer",
+    "pk": 853,
+    "fields": {
+        "excersise": "45df3db0-5da6-4246-848c-4c6dfdfc9dab",
+        "explanation_string": " \u201chorses\u201d here are mentioned as a group of animals not a  pecific group of horses. ",
+        "answer_string": "countable",
+        "possible_answers": "countable/uncountable"
+    }
+},
+{
+    "model": "languageTests.answer",
+    "pk": 854,
+    "fields": {
+        "excersise": "5b2a720e-cc33-4296-aefb-b81015753376",
+        "explanation_string": "  \u201cthe horses\u201d of Mr. Thomas are a specific group of horses. ",
+        "answer_string": "some",
+        "possible_answers": "any/some/None"
+    }
+},
+{
+    "model": "languageTests.answer",
+    "pk": 855,
+    "fields": {
+        "excersise": "db8d17ac-d511-4811-a517-c75bda28299b",
+        "explanation_string": "sad",
+        "answer_string": "some",
+        "possible_answers": "*"
+    }
+},
+{
+    "model": "languageTests.answer",
+    "pk": 856,
+    "fields": {
+        "excersise": "425b2752-f20e-4c90-957b-ce5493485416",
+        "explanation_string": "asd",
+        "answer_string": "some",
+        "possible_answers": "possible"
+    }
+},
+{
+    "model": "languageTests.language",
+    "pk": 1,
+    "fields": {
+        "name": "English"
+    }
+},
+{
+    "model": "languageTests.excersise",
+    "pk": "425b2752-f20e-4c90-957b-ce5493485416",
+    "fields": {
+        "exercise_type": "tf",
+        "text": "There are $$$ cups on the kitchen table.",
+        "language_test": 125
+    }
+},
+{
+    "model": "languageTests.excersise",
+    "pk": "45df3db0-5da6-4246-848c-4c6dfdfc9dab",
+    "fields": {
+        "exercise_type": "cco",
+        "text": "Bag $$$",
+        "language_test": 125
+    }
+},
+{
+    "model": "languageTests.excersise",
+    "pk": "5b2a720e-cc33-4296-aefb-b81015753376",
+    "fields": {
+        "exercise_type": "cco",
+        "text": "There are $$$ cups on the kitchen table.",
+        "language_test": 125
+    }
+},
+{
+    "model": "languageTests.excersise",
+    "pk": "db8d17ac-d511-4811-a517-c75bda28299b",
+    "fields": {
+        "exercise_type": "t",
+        "text": "There are $$$ cups on the kitchen table.",
+        "language_test": 125
+    }
+},
+{
+    "model": "languageTests.topic",
+    "pk": 96,
+    "fields": {
+        "level": "b",
+        "title": "sel"
+    }
+},
+{
+    "model": "languageTests.languagetest",
+    "pk": 125,
+    "fields": {
+        "task": "Construct a sentence",
+        "number": 1,
+        "topic": 96,
+        "language": 1
+    }
+}
+]

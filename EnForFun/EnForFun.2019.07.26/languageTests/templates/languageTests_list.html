@@ -1,0 +1,20 @@
+{% extends "base_generic2.html" %}
+
+{% block content %}
+  {% if language_test_list %}  
+  <h1>Tests</h1>
+     
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Tests:</h4>
+
+    {% for test in language_test_list %}
+      <hr>
+      <p><a href="{{ test.get_absolute_url }}">{{ test.title}}</a> ({{ test.return_level_str }})</p>
+    {% endfor %}
+  {% else %}
+      <p>There are no tests.</p>
+  {% endif %}  
+    
+  </div>
+{% endblock %}
