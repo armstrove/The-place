@@ -9,8 +9,8 @@ Topic        = settings.TOPIC_MODEL
 LanguageTest = settings.LANGUAGE_TEST_MODEL
 
 class TopicProgress(models.Model):
-    user          = models.ForeignKey(User, on_delete='CASCADE') # user instance instance.id
-    topic         = models.ForeignKey(Topic, on_delete='CASCADE')
+    user          = models.ForeignKey(User, on_delete=models.CASCADE) # user instance instance.id
+    topic         = models.ForeignKey(Topic, on_delete=models.CASCADE)
     finished      = models.BooleanField(default=False)
     started       = models.BooleanField(default=False)
     visited_times = models.IntegerField(default=0)
@@ -26,9 +26,9 @@ class TopicProgress(models.Model):
 #        #return ', '.join(genre.name for genre in self.genre.all()[:3])
 
 class TestProgress(models.Model):  
-    user           = models.ForeignKey(User, on_delete='CASCADE') # user instance instance.id
-    #topic          = models.ForeignKey(Topic, on_delete='CASCADE')
-    language_test  = models.ForeignKey(LanguageTest, on_delete='CASCADE')
+    user           = models.ForeignKey(User, on_delete=models.CASCADE) # user instance instance.id
+    #topic          = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    language_test  = models.ForeignKey(LanguageTest, on_delete=models.CASCADE)
     finished       = models.BooleanField(default=False)
     started        = models.BooleanField(default=False)
     visited_times  = models.IntegerField(default=0)     
@@ -57,8 +57,8 @@ class TestProgress(models.Model):
 
 
 #class ProgressProfile(models.Model):
-#    user           = models.ForeignKey(User, on_delete='CASCADE') # user instance instance.id
-#    topic_progress = models.ForeignKey(TopicProgress, blank=True, null=True, on_delete='CASCADE')
+#    user           = models.ForeignKey(User, on_delete=models.CASCADE) # user instance instance.id
+#    topic_progress = models.ForeignKey(TopicProgress, blank=True, null=True, on_delete=models.CASCADE)
     
 #    objects = ProgressProfileManager()
     
@@ -121,4 +121,3 @@ def test_attepted(sender, instance, request, passed, *args, **kwargs):
     new_test_progress_obj.save()    
     
 test_attempt_signal.connect(test_attepted)
-    

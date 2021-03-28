@@ -23,8 +23,8 @@ class Migration(migrations.Migration):
                 ('visited_times', models.IntegerField(default=0)),
                 ('failed_times', models.IntegerField(default=0)),
                 ('passed_times', models.IntegerField(default=0)),
-                ('language_test', models.ForeignKey(on_delete='CASCADE', to='languageTests.LanguageTest')),
-                ('user', models.ForeignKey(on_delete='CASCADE', to=settings.AUTH_USER_MODEL)),
+                ('language_test', models.ForeignKey(on_delete=models.CASCADE, to='languageTests.LanguageTest')),
+                ('user', models.ForeignKey(on_delete=models.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -34,8 +34,8 @@ class Migration(migrations.Migration):
                 ('finished', models.BooleanField(default=False)),
                 ('started', models.BooleanField(default=False)),
                 ('visited_times', models.IntegerField(default=0)),
-                ('topic', models.ForeignKey(on_delete='CASCADE', to='languageTests.Topic')),
-                ('user', models.ForeignKey(on_delete='CASCADE', to=settings.AUTH_USER_MODEL)),
+                ('topic', models.ForeignKey(on_delete=models.CASCADE, to='languageTests.Topic')),
+                ('user', models.ForeignKey(on_delete=models.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

@@ -1,38 +1,48 @@
 import sys
 sys.path.append("..")
 from pageObjects.LoginPage import LoginPage
+from pageObjects.NavBar import NavBar
 import pytest
 from selenium import webdriver
+import time
 
-# Fixture for Chrome
-@pytest.fixture(scope="module")
-def driver_init(request):
-    print("Chrome_driver_init")
-    chrome_driver = webdriver.Chrome("C:\Drivers\chrome\87.0.4280.20\chromedriver.exe")
-    #request.cls.driver = chrome_driver
-    yield
-    chrome_driver.close()
+@pytest.fixture
+def create_user(db, django_user_model):
+    def make_user(**kwargs):
+        return django_user_model.objects.create_user(**kwargs)
+    return make_user
+
+@pytest.mark.django_db
+def authenticated_user(client, django_user_model):
+    email       = "some@gmail.com",
+    password    = "Bobo!@34",
+    full_name   = "Vazgen",
+    is_active      = True,
+    is_staff       = False,
+    is_admin       = False,
+    user = django_user_model.objects.create_user(
+       email       = "some@gmail.com",
+       password    = "Bobo!@34",
+       full_name   = "Vazgen",
+       is_active      = True,
+       is_staff       = False,
+       is_admin       = False,
+   )
+
+@pytest.mark.django_db
+def test_login(driver_init):
+    driver = driver_init
+    navbar = NavBar(driver)
+    page   = LoginPage(driver)
+    navbar.click_on_login()
+    page.type_in_email("some@gmail.com")
+    page.type_in_password("Bobo!@34")
+    page.click_on_login()
+
+    time.sleep(20)
 
 
-# def login_setup():
-#     print('Setup for login called')
-
-# def login_teardown():
-#     print('Teardown for login called')
 
 
-# def setup_module(module):
-#     print('\nSetup of module is called')
 
-
-# def teardown_module(module):
-#     print('\nTeardown of module is called')
-
-@pytest.mark.usefixtures("driver_init")
-def test_login(module):
-    print("<<Test_login")
-    chrome_driver.get("http://127.0.0.1:8000/login/")
-
-def test_login2():
-    print("<<Test_login2")
 

@@ -1,5 +1,5 @@
 {% extends "base_generic2.html" %}
-
+{% load custom_tags %}
 {% block content %}
 
 
@@ -24,7 +24,7 @@
        
       {% if forloop.first %}<div class="row">{% endif %}  
           <div class="col col-xs-4 language-tests margin">
-              <a href="{{ topic.topic.get_absolute_url }}">         
+              <a href="{{ topic.topic.get_absolute_url }}" class="{{ topic.topic.title|topic_class_name }} topic-name">
                 {% if topic.progress.started %}
                   <div class="topic_button topic-started"> started
                 {% else %}  

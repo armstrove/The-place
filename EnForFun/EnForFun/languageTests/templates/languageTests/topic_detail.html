@@ -15,7 +15,7 @@
        
       {% if forloop.first %}<div class="row">{% endif %}  
           <div class="col col-xs-2 language-tests margin">
-              <a href="{{ language_test.test.get_absolute_url }}">         
+              <a href="{{ language_test.test.get_absolute_url }}">
                 {% if   language_test.progress.finished %}
                   <div class="language-test-button test-finished">
                 {% elif language_test.progress.started %}

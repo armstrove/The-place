@@ -15,9 +15,9 @@ FORCE_SESSION_TO_ONE = getattr(settings, 'FORCE_SESSION_TO_ONE', False)
 FORCE_INACTIVE_USER_ENDSESSION= getattr(settings, 'FORCE_INACTIVE_USER_ENDSESSION', False)
 
 class ObjectViewed(models.Model):
-    user               = models.ForeignKey(User, blank=True, null=True, on_delete='CASCADE') # user instance instance.id
+    user               = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE) # user instance instance.id
     ip_address         = models.CharField(max_length=220, blank=True, null=True)
-    content_type       = models.ForeignKey(ContentType, on_delete='CASCADE') # LanguageTests ,excersise, 
+    content_type       = models.ForeignKey(ContentType, on_delete=models.CASCADE) # LanguageTests ,excersise,
     object_id          = models.PositiveIntegerField()  # User id , product id ...
     content_object     = GenericForeignKey('content_type','object_id') # LanguageTest instance
     timestamp          = models.DateTimeField(auto_now_add=True)
@@ -50,7 +50,7 @@ object_viewed_signal.connect(object_viewed_reciever)
 
 
 class UserSession(models.Model):
-    user               = models.ForeignKey(User, blank=True, null=True, on_delete='CASCADE') # user instance instance.id
+    user               = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE) # user instance instance.id
     ip_address         = models.CharField(max_length=220, blank=True, null=True) #IP Field
     session_key        = models.CharField(max_length=100, blank=True, null=True) #min 50
     timestamp          = models.DateTimeField(auto_now_add=True)

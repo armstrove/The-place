@@ -39,6 +39,7 @@ class LoginView(FormView):
             if is_safe_url(redirect_path, request.get_host()):
                 return redirect(redirect_path)
             else:
+                print("Wrong password or email")
                 return redirect("/")
         return super(LoginView, self).form_invalid(form)
 

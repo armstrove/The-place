@@ -34,17 +34,17 @@
           <a class="navbar-brand" href="{% url 'index_lt' %}">EnForFun</a>
         </div>
     <ul class="nav navbar-nav flex-row">
-      <li><a href="{% url 'index_lt' %}" id="homePage">Home</a></li>
-      <li><a href="{% url 'topics' %}">Topics</a></li>
-      <li><a href="{% url 'tutorials' %}">Tutorial</a></li>
+      <li><a href="{% url 'index_lt' %}"  id="navbar_homePage">Home</a></li>
+      <li><a href="{% url 'topics' %}"    id="navbar_topics">Topics</a></li>
+      <li><a href="{% url 'tutorials' %}" id="navbar_tutorials">Tutorial</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right flex-row">
       {% if user.is_authenticated %}
                <li><a href="#"><span class="glyphicon glyphicon-user"></span>{{ user.get_username }}</a></li>
-               <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>  
+               <li><a href="{% url 'logout'%}?next={{request.path}}" id="logout_button">Logout</a></li>
       {% else %}
                <li><a href="{% url 'register'%}?next={{request.path}}"><span class="glyphicon glyphicon-registration-mark"></span>Register</a></li>
-               <li><a href="{% url 'login_a'%}?next={{request.path}}" id="loginButton"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+               <li><a href="{% url 'login_a'%}?next={{request.path}}" id="login_button"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
       {% endif %}
     </ul>
       </div>   
